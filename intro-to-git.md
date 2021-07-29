@@ -125,7 +125,7 @@ To see the line-by-line changes since the last commit:
 git diff
 ```
 
-Add a few tasks in a few different files and then try `git diff`.
+Add a few tasks in a few different files and then try `git diff`. If the output is very long, use the space bar to page through results; or press <kbd>q</kbd> to quit and get back to the command prompt.
 
 ### Create a new branch
 
