@@ -326,3 +326,5 @@ After you get the hangs of the basics, here are some resources to learn more abo
  - [My favorite Git Commit](http://my%20favourite%20git%20commit/){:target="_blank}
  - [Mastering Git](https://thoughtbot.com/upcase/mastering-git){:target="_blank}
  - Drop us a line! We love answering questions.
+
+This guide is a work in progress!
