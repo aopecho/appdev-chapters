@@ -167,7 +167,7 @@ When we're writing code, it's good to branch early and often. There's no cost to
 
 Try to make your commit messages somewhat descriptive of what you did since the last snapshot, but it's more important that you just **make lots of commits**. So if you must just say `git commit -m "WIP"` (for "work in progress"), that's fine; we can clean it up later.
 
-Our golden rule: **A**lways **B**e **C**ommitting. As long as you do that, everything will be okay; we can recover from anything with Git as long as you commit early and often. You cannot _over_commit but you can most certainly _under_commit.
+Our golden rule: **A**lways **B**e **C**ommitting. As long as you do that, everything will be okay; we can recover from anything with Git as long as you commit early and often. You cannot _over_ commit but you can most certainly _under_ commit.
 
 ### Stash changes
 
