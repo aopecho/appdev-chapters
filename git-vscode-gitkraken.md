@@ -34,7 +34,7 @@ Now, let's start adding files to our repository. Open the folder in VSCode.
 
 The IDE (Integrated Development Environment) that you find yourself in is [Microsoft VSCode](https://code.visualstudio.com/){:target="_blank"}, my text editor of choice.[^vscode_intro]
 
-[vscode_intro]: [Here's a good introductory video to VSCode.](https://code.visualstudio.com/docs/introvideos/basics){:target="_blank"}
+[^vscode_intro]: [Here's a good introductory video to VSCode.](https://code.visualstudio.com/docs/introvideos/basics){:target="_blank"}
 
 At the left is a file explorer, at the bottom is a terminal window with a command-line interface to our computer, and at the top-right is the text editing pane.
 
