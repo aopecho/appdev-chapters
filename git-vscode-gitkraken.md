@@ -22,7 +22,7 @@ A "repository" is a folder that we'll keep all our files and other folders in. I
 
 ### Open the folder in VSCode
 
-Now, let's start adding files to our repo. Open the folder in VSCode. 
+Now, let's start adding files to our repository. Open the folder in VSCode.
 
  - You can do it directly from GitKraken:
 
@@ -33,7 +33,6 @@ Now, let's start adding files to our repo. Open the folder in VSCode.
 ### Add some files
 
 The IDE (Integrated Development Environment) that you find yourself in is [Microsoft VSCode](https://code.visualstudio.com/){:target="_blank"}, my text editor of choice.[^vscode_intro]
-
 
 [vscode_intro]: [Here's a good introductory video to VSCode.](https://code.visualstudio.com/docs/introvideos/basics){:target="_blank"}
 
@@ -91,7 +90,7 @@ Explore the interface. Try to find out how to view the changes made to a file be
 
 ### Branch
 
-In Git, "branches" are the equivalent of the different files we used to save as "_v1", "_v2", "v3", etc. You can create a branch and then commit changes to it, and the old branch will exist _in parallel_, making it easy to switch back and forth between different **versions**.
+In Git, "branches" are the equivalent of the different files we used to save as "\_v1", "\_v2", "v3", etc. You can create a branch and then commit changes to it, and the old branch will exist _in parallel_, making it easy to switch back and forth between different **versions**.
 
 [Read more about branching here.](https://support.gitkraken.com/working-with-repositories/branching-and-merging/){:target="_blank"} Then try creating another branch for next week: call it `week-of-20-sep`.
 
