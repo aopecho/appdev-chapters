@@ -91,8 +91,8 @@ If you're ever unsure of what branch you're on, the top of the page should list 
 
 Gitpod workspaces are not permanent. Even if we make git commits, if the workspace is deleted so is all of our work! This is where GitHub comes in. We can push all of the commits we've made to our repository on GitHub where it will live forever. If our Gitpod workspace gets destroyed we can just re-create another one from the latest commit on GitHub!
 
-Before you can push to GitHub, you need to give Gitpod access. Head over to the [Access Control](https://gitpod.io/access-control/) panel on Gitpod and make sure you check "write public repos" and click "Update". 
+Before you can push to GitHub, you need to give Gitpod access. Head over to the [Integrations under your account settings](https://gitpod.io/integrations) in Gitpod and make sure you check "public repos" and click "Update". 
 
-![](/assets/gitpod-write-access.png)
+![](/assets/gitpod-integration-settings.png)
 
 You'll need to stop and start any running workspaces for the changes to take affect, but once you do simply click the "Push the GitHub" button and you should be all set.
