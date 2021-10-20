@@ -11,6 +11,15 @@ Ruby differentiates between whole numbers, or `Integer`s, and decimal numbers, o
 
 We'll learn about integers first.
 
+## Syntax
+
+`Integer`s begin with a digit (0-9) and end when Ruby meets anything other than a digit (a space, a comma in an array, a closing parentheses at the end of method arguments, etc) — _except_ for underscores, which you can use as a delimiter if it helps to understand the number:
+
+```ruby
+10000000    # Is this 1 million? 100 million?
+10_000_000  # Ah, it's easier to tell now.
+```
+
 ## Methods
 
 Let's experiment with some common methods for `Integer`s:
