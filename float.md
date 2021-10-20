@@ -61,4 +61,6 @@ p rand
 
 [Click here for a REPL to try it.](https://repl.it/@raghubetina/float-rand?lite=true){:target="_blank"}
 
-Looking for even more Float methods? See [here](https://chapters.firstdraft.com/chapters/853){:target="_blank"}.
+## Even more Float methods
+
+Looking for even more Float methods? See [here](https://chapters.firstdraft.com/chapters/853){:target="_blank"} for some additional methods added by the `activesupport` gem (automatically available within Ruby on Rails).
