@@ -1,16 +1,25 @@
-# More on Floats
+# More Float methods
+
+Ruby on Rails enhances certain Ruby classes with additional convenience methods that aren't included in plain ol' Ruby. Many of these are included in the `activesupport` gem that comes with Rails; you could include in a pure Ruby program if you wanted to.
+
+ - To use the following methods within Ruby on Rails, you don't have to do anything.
+ - To use the following methods in a plain Ruby script, include the line:
+
+    ```ruby
+    require 'activesupport'
+    ```
 
 ### Formatting Floats as Strings
 
-You can call the `.to_s` method on a Float to convert the number into a String
+As we know, you can call the `.to_s` method on a Float to convert the number into a String:
 
 ```ruby
 10.25.to_s # => "10.25"
 ```
 
-In a Rails[^Rails] application, you can provide a `Symbol`[^Symbol] as an argument to the `to_s` method. This allows you to convert the Float to a String _and_ add additional formatting.
+Within a Rails application[^Rails], you can provide a `Symbol`[^Symbol] as an argument to `Float`'s `to_s` method. This allows you to convert the `Float` to a `String` _and_ add additional formatting at the same time.
 
-[^Rails]: Specifically the gem that makes this possible is `activesupport`, which is included _in_ Rails.
+[^Rails]:  Or anywhere using `activesupport`.
 
 #### Phone
 
