@@ -14,7 +14,7 @@ Then, at a Terminal prompt:
 bundle install
 ```
 
-You will then have access to the `Mailgun::Client` class. It is used like this:
+You will then have access to the `Mailgun::Client` class. After you've [stored your Mailgun credentials securely](https://chapters.firstdraft.com/chapters/792){:target="_blank"}, you can use like this:
 
 ```ruby
 # Retrieve your credentials from secure storage
@@ -50,7 +50,7 @@ Then, at a Terminal prompt:
 bundle install
 ```
 
-You will then have access to the `Twilio::REST::Client` class. It is used like this:
+You will then have access to the `Twilio::REST::Client` class. After you've [stored your Twilio credentials securely](https://chapters.firstdraft.com/chapters/792){:target="_blank"}, you can use like this:
 
 ```ruby
 # Retrieve your credentials from secure storage
