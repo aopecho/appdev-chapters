@@ -4,6 +4,8 @@ Here is your target:
 
 [https://photogram-final.matchthetarget.com/](https://photogram-final.matchthetarget.com/){:target="_blank"}
 
+Explore it and see what's different relative to previous Photogram targets.
+
 ## Hints
 
 The starting point of this project is a blank Rails application. You need to create all the tables and models yourself!
@@ -12,7 +14,7 @@ We domain modeled this application in first two weeks of class, and used the sam
 
 ![](/assets/photogram-final-erd.png)
 
-_All tables should have the usual `created_at` and `updated_at` columns_
+_All tables will automatically get the usual `id`, `created_at`, and `updated_at` columns._
 
 If you add these columns _exactly_, then you can run the `rails sample_data` Rake task to add dummy data to your database tables like with the homeworks.
 
