@@ -285,3 +285,19 @@ p a.sum # => 57
 ```
 
 [Click here for a REPL to try it.](https://repl.it/@raghubetina/sum?lite=true){:target="_blank}
+
+### join
+
+You can think of `Array`'s `.join` method as the inverse of `String`'s `.split` method:
+
+```ruby
+
+"hello!".split("")
+# => ["h", "e", "l", "l", "o", "!"]
+
+["h", "e", "l", "l", "o", "!"].join
+# => "hello!"
+```
+
+That is, the `.split` method is called on a `String` and returns an `Array` of substrings; while the `.join` method is called on an `Array` (where each element must be a `String`) and returns a single `String`.
+
