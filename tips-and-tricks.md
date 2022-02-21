@@ -24,7 +24,6 @@ Use your up and down arrows to scroll through your command history so that you d
 
 Mac OS: <kbd>Command</kbd> + <kbd>K</kbd>
 
-Windows: <kbd>Ctrl</kbd> + <kbd>K</kbd>
 
 ![](/assets/clear_terminal.gif)
 
@@ -149,3 +148,21 @@ Mac OS: <kbd>Ctrl</kbd> + <kbd>~</kbd> (i.e. <kbd>Ctrl</kbd> + <kbd>Shift</kbd> 
 Windows: <kbd>Ctrl</kbd> + <kbd>~</kbd> (i.e. <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>`</kbd>)
 
 ![](/assets/new_terminal.gif)
+
+
+---
+
+[^1]: A recent Gitpod update removed this keyboard shortcut for Windows, so you'll need to configure it yourself.
+
+From the menu open Preferences and select Keyboard shortcuts.
+
+![](/assets/gitpod-keyboard-shortcuts.png)
+
+Then search for "terminal clear" in the search bar and click the plus icon to the left of it.
+
+![](/assets/gitpod-clear-terminal.png)
+
+Finally, type <kbd>ctrl</kbd> + <kbd>k</kbd> and <kbd>Enter</kbd> to confirm.
+
+![](/assets/gitpod-ctrl-k.png)
+
