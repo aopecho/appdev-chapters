@@ -47,7 +47,7 @@ Otherwise, they are just like strings, and we can use them to hold text data:
 
 So, that's that. `Symbol`s are lightweight strings that we, the developers, use when we need to label things. Let's continue.
 
-## Creating hashes
+## Creating hashes and storing values
 
 Back to the problem of storing a list of attributes about a person effectively, without mixing them up.
 `Hash`es are like `Array`s, except each cell isn't automatically numbered — **we get to label each cell ourselves**. So instead of representing a person with an Array like `["Raghu", "Betina", "Instructor"]`, we instead can use a `Hash` like this:
@@ -157,7 +157,7 @@ In particular, `Hash`es are very often used as the arguments to methods, because
 Movie.where({ :title => "The Shawshank Redemption" })
 ```
 
-## at shorthand, []
+## fetch shorthand, []
 
 Much like [`Array`'s shorthand for `.at`](https://chapters.firstdraft.com/chapters/758#at-shorthand-){:target="_blank"}, `Hash` also a shorthand for retrieving elements with `.fetch`: `.[]` (and the associated syntactic sugar). So we _could_ write:
 
@@ -187,6 +187,22 @@ Were you able to find the difference between the two methods?
 I personally prefer getting the descriptive error message if the key is not present in the hash, because it means that I probably made a typo or some other mistake, and I prefer being alerted to that fact rather the program proceeding quietly only to fail elsewhere. In the rare case that it should be possible for a key to be optionally present in a hash, then I can use a fallback second argument to `.fetch`, as [described above](#fetch-fallback).
 
 That said, out on the internet, using `.[]` is the most prevalent style of accessing hashes, so you should be familiar with it. But in this text, I will stick with `.fetch`.
+
+## store shorthand, []=
+
+Similar to the shorthand for `.fetch` above, there's a shorthand for `.store`: `[]=`
+
+```ruby
+person1 = Hash.new
+person1[:first_name] = "Raghu"
+person1[:last_name] = "Betina"
+person1[:role] = "Instructor"
+
+p person1
+# => { :first_name => "Raghu", :last_name => "Betina", :role => "Instructor" }
+```
+
+This syntactic sugar makes it _feel_ like we're doing variable assignments to keys within the `Hash`, but under the hood it's identical to `.store(:key, :value)`.
 
 ## Use .keys to explore
 
