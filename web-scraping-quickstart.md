@@ -8,13 +8,18 @@ gem "http"
 
 You can follow along in the `rails console`.
 
-1. Choose a URL with the data you want on it. For this example, let’s pick `chapters.firstdraft.com`.
+### Step 1
+
+Choose a URL with the data you want on it. For this example, let’s pick `chapters.firstdraft.com`.
 
 ```ruby
 url = "https://chapters.firstdraft.com/chapters/753"
 ```
     
-2. Make a request to that URL and save the result in a variable.
+### Step 2
+
+Make a request to that URL and save the result in a variable.
+
 ```ruby
 webpage = HTTP.get(url)
 ```
@@ -34,7 +39,9 @@ This should return something like:
 
 Now we have a big String that has all the HTML elements on the page. But as we know from reading from an API, searching through a String is a pain! It’d be a lot nicer if we could convert it to an Array or a Hash or some other Ruby structure so we could search through it easier.
 
-3. Similar to parsing the JSON of an API, we next need to parse the page’s HTML
+### Step 3
+
+Similar to parsing the JSON of an API, we next need to parse the page’s HTML.
 
 ```ruby
 parsed_page = Nokogiri::HTML(webpage.body.to_s)
@@ -46,7 +53,9 @@ p parsed_page
 
 Next, how do we select the specific parts of the page to get the data from?
 
-4. We need to use CSS selectors to pick which elements we want to grab from the page.
+### Step 4
+
+We need to use CSS selectors to pick which elements we want to grab from the page.
 
 Let’s say I want to select all the links in a list on the Chapters homepage.
 
@@ -66,7 +75,9 @@ For more details about how to figure out the selector you want to use, see the [
 
 The `.css` method will return a list of HTML elements that match whatever selector we gave it as an argument.
 
-5. Since we selected a list of elements, we can now loop through all of them and grab only the visible text of the element with the `text` method.
+### Step 5
+
+Since we selected a list of elements, we can now loop through all of them and grab only the visible text of the element with the `text` method.
 
 ```ruby
 links.each do |link|
