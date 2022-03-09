@@ -33,7 +33,7 @@ This should return something like:
 ```  
 
 Now we have a big String that has all the HTML elements on the page. But as we know from reading from an API, searching through a String is a pain! It’d be a lot nicer if we could convert it to an Array or a Hash or some other Ruby structure so we could search through it easier.
-	
+
 3. Similar to parsing the JSON of an API, we next need to parse the page’s HTML
 
 ```ruby
@@ -41,9 +41,9 @@ parsed_page = Nokogiri::HTML(webpage.body.to_s)
 
 p parsed_page
 ```
-    
+
 [Nokogiri](https://github.com/sparklemotion/nokogiri) is a gem that all Rails apps have and can parse HTML into a structured Ruby object. Now we have the page data in a structured format! It’s not an Array or a Hash, but it is a Ruby object that has methods we can use to better search through HTML, which is all that matters.
-    
+
 Next, how do we select the specific parts of the page to get the data from?
 
 4. We need to use CSS selectors to pick which elements we want to grab from the page.
