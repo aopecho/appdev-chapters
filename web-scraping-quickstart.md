@@ -9,6 +9,7 @@ gem "http"
 You can follow along in the `rails console`.
 
 1. Choose a URL with the data you want on it. For this example, let’s pick `chapters.firstdraft.com`.
+
 ```ruby
 url = "https://chapters.firstdraft.com/chapters/753"
 ```
@@ -18,7 +19,7 @@ url = "https://chapters.firstdraft.com/chapters/753"
 webpage = HTTP.get(url)
 ```
 
-The result of our request is a Response object.
+The result of our request is a `Response` object.
 There is a LOT of data that the browser can return when we request a page. For web scraping purposes, we only care about the visible content of the page. To get that, we use the `body` method.
 
 ```ruby
@@ -40,7 +41,7 @@ parsed_page = Nokogiri::HTML(webpage.body.to_s)
 p parsed_page
 ```
     
-[`Nokogiri`](https://github.com/sparklemotion/nokogiri) is a gem that all Rails apps have and can parse HTML into a structured Ruby object. Now we have the page data in a structured format! It’s not an Array or a Hash, but it is a Ruby object that has methods we can use to better search through HTML, which is all that matters.
+[Nokogiri](https://github.com/sparklemotion/nokogiri) is a gem that all Rails apps have and can parse HTML into a structured Ruby object. Now we have the page data in a structured format! It’s not an Array or a Hash, but it is a Ruby object that has methods we can use to better search through HTML, which is all that matters.
     
 Next, how do we select the specific parts of the page to get the data from?
 
@@ -73,6 +74,7 @@ end
 ```
 
 If we run the whole code we should get the text of the links we wanted:
+
 ```bash
 "The One Reference"
 "Nouns, verbs, and grammar"
@@ -83,5 +85,8 @@ If we run the whole code we should get the text of the links we wanted:
 ```
 
 ## CSS Resources
+
 - [CSS Diner](https://flukeout.github.io/) is a fun and helpful game that teaches you CSS Selectors.
 - [Selector Gadget](https://selectorgadget.com/) is a Chrome extension that makes it almost too easy to find the exact selector you need to scrape a webpage. Watch the video in the link to see you that works.
+
+Happy hacking!
