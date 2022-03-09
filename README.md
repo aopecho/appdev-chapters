@@ -52,6 +52,8 @@ Works in progress, and not in order.
  47. [A few management readings](https://chapters.firstdraft.com/chapters/789)
  48. [Starting a Rails app from scratch](https://chapters.firstdraft.com/chapters/851)
  49. [Adding a sample_data rake task](https://chapters.firstdraft.com/chapters/852)
+ 50. [Exporting data as a CSV](https://chapters.firstdraft.com/chapters/873)
+ 51. [Getting started web scraping](https://chapters.firstdraft.com/chapters/874)
 
 ---
 
