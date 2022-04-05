@@ -11,16 +11,16 @@ HTML is made up of **elements**.
 ```
 
 An **element** is constructed from the following:
-#### Opening Tag
-`<a>` in this example.
+### Opening Tag
+Opening tags contain the name of the tag surrounded by `<` and `>`.`<a>` is the opening tag in this example.
 
-#### Closing Tag
-`</a>` in this example.
+### Closing Tag
+Closing tags contain the name of the tag surrounded by `</` and `>`.`</a>` is the closing tag in this example.
 
-#### Content
-`Go to Wikipedia` in this example.
+### Content
+Content can be anything that is in-between the opening and closing tag. `Go to Wikipedia` is content for the `<a>` element in this example.
 
-#### Attributes
+### Attributes
 
 One or more attributes can be added inside the opening tag after the tag name. `href=""` is an an attribute in the example.
 
@@ -34,6 +34,17 @@ For example:
 Some attributes can be put on almost any element, like `class=""` or `id=""`.
 ​Any single `id` should only be used **once** per document. A class can and should be used repeatedly.
 
+### Exceptions
+
+There are a few elements that don't require content and therefor don't have closing tags.
+
+The most common ones are:
+- `<img>`
+- `<input>`
+- `<br>`
+- `<hr>`
+- `<meta>`
+- `<link>`
 
 ### Nesting Elements
 
@@ -52,7 +63,7 @@ There are required elements that every HTML page must have to be considered **va
 <!DOCTYPE html>
 ```
 
-This must be the very first line in the file. It declares what format the data on the page is. Nowadays this is always HTML.
+This must be the very first line in the file. It instructs the web browser about what version of HTML the page is written in.
 
 ### `<html>` element
 
@@ -62,7 +73,7 @@ This must be the very first line in the file. It declares what format the data o
 </html>
 ```
 
-The `<html>` element contains every other HTML element on the page. It contains **exactly** two other elements: `<head>` and `<body>`
+The `<html>` element is the ancestor of every other HTML element on the page (except for the `<!DOCTYPE>` declaration). It contains **exactly** two other elements: `<head>` and `<body>`.
 
 ### `<head>` element
 
@@ -74,7 +85,7 @@ The `<html>` element contains every other HTML element on the page. It contains 
 </html>
 ```
 
-This element contains information and instructions for the browser on how to process the document; things like what title to put in the browser tab, what style sheets to load, what language to use (we will always use a character set called UTF-8, which allows for all languages as well as things like emoji), etc.
+This element contains information and instructions for the browser on how to process the document; things like what title or icon to put in the browser tab, what style sheets to load, what language to use, etc. 
 
 ### `<body>` element
 
@@ -86,6 +97,4 @@ This element contains information and instructions for the browser on how to pro
 </html>
 ```
 
-This element contains all other elements and content that a user can see or interact with.
-
-
+This element contains all other elements and content that a user can see or interact with. It must be the second element inside of the parent `<html>` element, following only the `<head>` element.
