@@ -14,7 +14,9 @@ An **element** is constructed from an opening tag, content, and a closing tag. T
 
 ### Attributes
 
-One or more attributes can be added inside the opening tag after the tag name.
+An attribute specifies additional information about the element. One or more attributes can be added inside the opening tag after the tag name. Attributes are usually structured as name/value pairs in the format `name="value"`.
+
+For example:
 
 ```html
 <a href="https://www.wikipedia.org">
