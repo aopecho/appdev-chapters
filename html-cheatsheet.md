@@ -2,27 +2,25 @@
 
 ## Basic Syntax
 
-HTML is made up of **elements**.
+An HTML page is made up of **elements**.
+
+An **element** is constructed from an opening tag, content, and a closing tag. The general structure looks like:
+
+```html
+<tagname>Content goes here...</tagname>
+```
+
+<small>`tagname` is a not a real HTML tag, but a placeholder for any HTML tag.</small>
+
+### Attributes
+
+One or more attributes can be added inside the opening tag after the tag name.
 
 ```html
 <a href="https://www.wikipedia.org">
   Go to Wikipedia
 </a>
 ```
-
-An **element** is constructed from the following:
-### Opening Tag
-Opening tags contain the name of the tag surrounded by `<` and `>`.`<a>` is the opening tag in this example.
-
-### Closing Tag
-Closing tags contain the name of the tag surrounded by `</` and `>`.`</a>` is the closing tag in this example.
-
-### Content
-Content can be anything that is in-between the opening and closing tag. `Go to Wikipedia` is content for the `<a>` element in this example.
-
-### Attributes
-
-One or more attributes can be added inside the opening tag after the tag name. `href=""` is an an attribute in the example.
 
 Most attributes only make sense on specific elements.
 
@@ -31,12 +29,11 @@ For example:
 - `src=""` is for `<img>` elements, to specify the url of the image to load.
 - `for=""` is for `<label>` elements, to specify which input element it is paired with.
 
-Some attributes can be put on almost any element, like `class=""` or `id=""`.
-​Any single `id` should only be used **once** per document. A class can and should be used repeatedly.
+Some attributes can be put on almost any element, like `class=""` or `id=""`. ​Any single `id` should only be used **once** per document. A class can and should be used repeatedly.
 
 ### Exceptions
 
-There are a few elements that don't require content and therefor don't have closing tags.
+There are a few elements that don't require content and therefore don't have a closing tag.
 
 The most common ones are:
 - `<img>`
@@ -48,10 +45,9 @@ The most common ones are:
 
 ### Nesting Elements
 
-Elements can contain other elements.
-When that happens, the one inside is known as a **child element** and the one outside is the **parent element**.
+Elements can contain other elements. When that happens, the one inside is known as a **child element** and the one outside is the **parent element**.
 
-If there are multiple levels of nesting, then all the elements inside an outer element are its _descendants_. Similarly, the "outer-most" element is referred to as an inner elements _ancestor_.
+If there are multiple levels of nesting, then all the elements inside an outer element are its _descendants_. Similarly, an element that contains other elements is referred to as an _ancestor_.
 
 ## Required Elements
 
@@ -63,7 +59,7 @@ There are required elements that every HTML page must have to be considered **va
 <!DOCTYPE html>
 ```
 
-This must be the very first line in the file. It instructs the web browser about what version of HTML the page is written in.
+This must be **the very first line** in the file. It instructs the web browser about what version of HTML the page is written in.
 
 ### `<html>` element
 
@@ -98,3 +94,25 @@ This element contains information and instructions for the browser on how to pro
 ```
 
 This element contains all other elements and content that a user can see or interact with. It must be the second element inside of the parent `<html>` element, following only the `<head>` element.
+
+## Types of Elements
+
+### Block-level
+
+A block-level element always starts on a new line and takes up the full width of its parent element.
+
+Common block-level elements include:
+- `<div>`
+- `<h1>` through `<h6>`
+- `<p>`
+
+### Inline
+
+An inline elment does not start on a new line and only takes up as much width as necessary.
+
+Common inline elements include:
+- `<img>`
+- `<a>`
+- `<span>`
+
+<hr>
