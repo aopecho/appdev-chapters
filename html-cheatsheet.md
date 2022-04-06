@@ -53,7 +53,7 @@ If there are multiple levels of nesting, then all the elements inside an outer e
 
 ## Required Elements
 
-There are required elements that every HTML page must have to be considered **valid**, according to [W3](https://www.w3.org/Consortium/) HTML specifications.
+There are required elements that every HTML page must have to be considered **valid**, according to [W3](https://www.w3.org/Consortium/) HTML specifications. You can paste any HTML into the [W3C Validator](https://validator.w3.org/#validate_by_input) to verify that your document is valid.
 
 ### Doctype Declaration
 
