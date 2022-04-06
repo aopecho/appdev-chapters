@@ -85,12 +85,27 @@ The `<html>` element is the ancestor of every other HTML element on the page (ex
 
 This element contains information and instructions for the browser on how to process the document; things like what title or icon to put in the browser tab, what style sheets to load, what language to use, etc. 
 
+### `<title>` element
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Cheatsheet</title>
+  </head>
+</html>
+```
+
+This element is used to assign a title to an HTML document. These titles are not displayed in the browser window, but they are used as the page name by search engines and displayed by browsers in the title bar, on the page tab, and as the page name of bookmarked webpages.
+
 ### `<body>` element
 
 ```html
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <title>HTML Cheatsheet</title>
+  </head>
   <body></body>
 </html>
 ```
