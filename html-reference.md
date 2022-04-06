@@ -273,7 +273,7 @@ My mother has <span>brown</span> eyes
 
 ### html
 
-The `html` tag tells the browser that this is an HTML document. It is used as a container for all of the HTML of an entire document or page. (except for the `<!DOCTYPE>` declaration).
+The `html` tag tells the browser that this is an HTML document. It is used as a container for all of the HTML of an entire document or page (except for the `<!DOCTYPE>` declaration).
 
 ```html
 <!DOCTYPE html>
@@ -308,8 +308,6 @@ The `body` tag contains the entire content of a webpage. It must be the second e
 </html>
 ```
 
-This is a whole HTML page.
-
 #### title
 
 The `title` tag is required and used to assign a title to an HTML document. These titles are not displayed in the browser window, but they are used as the page name by search engines and displayed by browsers in the title bar, on the page tab, and as the page name of bookmarked webpages.
@@ -326,9 +324,9 @@ The `title` tag is required and used to assign a title to an HTML document. Thes
 </html>
 ```
 
-This is a whole HTML page.
-
 ![](/assets/browser-title.jpg)
+
+With the addition of `<title>`, we now have a complete, valid HTML document.
 
 #### meta
 
@@ -348,7 +346,6 @@ The `meta` tag is  used to add machine-readable information to an HTML page. The
 </html>
 ```
 
-This is a whole HTML page.
 #### link
 
 The `link` tag defines a link between a document and an external resource. This element is most commonly used to define the relationship between a document and one or more external CSS stylesheets.
@@ -366,5 +363,3 @@ The `link` tag defines a link between a document and an external resource. This 
   </body>
 </html>
 ```
-
-This is a whole HTML page.
