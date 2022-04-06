@@ -16,10 +16,10 @@ To do so:
 
 Open Dev Tools:
 
-![](/assets/hard-refresh-dev-tools.png)
+![](/assets/hard-refresh-dev-tools-2.png)
 
 With Dev Tools open, "hard" refresh:
 
-![](/assets/hard-refresh-right-click-refresh.png)
+![](/assets/hard-refresh-right-click-refresh-2.png)
 
 Your HTML document should now have the latest CSS and any other linked assets (like images or javascripts).
