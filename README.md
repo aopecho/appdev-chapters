@@ -6,7 +6,7 @@ Works in progress, and not in order.
  1. [Planning your idea](https://chapters.firstdraft.com/chapters/783)
  2. [Diagramming your domain model](https://chapters.firstdraft.com/chapters/782)
  3. [Getting started with Gitpod](https://chapters.firstdraft.com/chapters/785)
- 4. [Sharing a Gitpod workspace snapshopt](https://chapters.firstdraft.com/chapters/876)
+ 4. [Sharing a Gitpod workspace snapshot](https://chapters.firstdraft.com/chapters/876)
  5. [Gitpod keyboard shortcuts and other productivity tips](https://chapters.firstdraft.com/chapters/834)
  6. [Using /git](https://chapters.firstdraft.com/chapters/839)
  7. [Getting automated feedback with rails grade](https://chapters.firstdraft.com/chapters/777)
