@@ -48,4 +48,4 @@ Note the `3000-` at the start. That is the URL of the live preview of your app.
 
 When someone clicks on the snapshot URL, they will get their own private copy of your workspace in the state that it was in when you took the snapshot.
 
-Any changes they make to their copy will not affect your workspace.
+Any changes they make to their copy will not affect your workspace. Similarly, any changes you make to your workspace won't affect their snapshot. So you can keep trying to resolve the problem on your own, or work on the next task, without interfering with their snapshot.
