@@ -1,8 +1,10 @@
 ### Full-Stack Application Development for Beginners
 
 Works in progress, and not in order.
+
+<script async src="https://cse.google.com/cse.js?cx=84981202d2395b390"></script>
+<div class="gcse-search"></div>
  
- 1. [Search all Chapters](/search)
  1. [Planning your idea](https://chapters.firstdraft.com/chapters/783)
  2. [Diagramming your domain model](https://chapters.firstdraft.com/chapters/782)
  3. [Getting started with Gitpod](https://chapters.firstdraft.com/chapters/785)
