@@ -14,7 +14,11 @@ To do so:
  2. **Right-click** on the refresh button.
  3. Select "Empty cache and hard reload".
 
+Open Dev Tools:
+
 ![](/assets/hard-refresh-dev-tools.png)
+
+With Dev Tools open, "hard" refresh:
 
 ![](/assets/hard-refresh-right-click-refresh.png)
 
