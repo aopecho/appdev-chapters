@@ -2,7 +2,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6 offset-md-1">
+    <div class="col-md-10 offset-md-1">
       <script async src="https://cse.google.com/cse.js?cx=84981202d2395b390"></script>
       <div class="gcse-search"></div>
     </div>
