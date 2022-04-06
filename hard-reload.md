@@ -4,10 +4,14 @@ Sometimes, when we update a CSS stylesheet, our page appears not to change. This
 
 The cause is usually Chrome's aggressive "caching", or saving, CSS files that it has already downloaded. If we refresh an HTML page that we've updated, Chrome won't necessarily also refresh all `<link>`ed CSS files unless we ask it to.
 
-To do so, open the Dev Tools, **right-click** on the refresh button, and select "Empty cache and hard reload":
+To do so:
+
+ 1. Open the Dev Tools (from the `View > Developer` menu, or right-click on any element and `Inspect`, or press <kbd>F12</kbd>).
+ 2. **Right-click** on the refresh button.
+ 3. Select "Empty cache and hard reload".
 
 ![](/assets/hard-refresh-dev-tools.png)
 
 ![](/assets/hard-refresh-right-click-refresh.png)
 
-Your page should now have the latest CSS and any other linked assets (like images or javascripts).
+Your HTML document should now have the latest CSS and any other linked assets (like images or javascripts).
