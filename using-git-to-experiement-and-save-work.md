@@ -95,8 +95,10 @@ Before you can push to GitHub, you need to give Gitpod access. Head over to the 
 
 ![](/assets/gitpod-integration-settings.png)
 
+This should open a GitHub authorization dialogue.
+
 **Make sure to click "Grant" next to the GitHub organization you created for class**
 
 ![](/assets/gitpod-github-organization-permissions.png)
 
-You'll need to stop and start any running workspaces for the changes to take affect, but once you do simply click the "Push the GitHub" button and you should be all set.
+Now you should be all set to push your commits to GitHub!
