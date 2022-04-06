@@ -6,8 +6,8 @@ The cause is usually Chrome's aggressive "caching", or saving, CSS files that it
 
 To do so, open the Dev Tools, **right-click** on the refresh button, and select "Empty cache and hard reload":
 
-![](/assets/hard-refresh-dev-tools.png.png)
+![](/assets/hard-refresh-dev-tools.png)
 
-![](/assets/hard-refresh-right-click-refresh.png.png)
+![](/assets/hard-refresh-right-click-refresh.png)
 
 Your page should now have the latest CSS and any other linked assets (like images or javascripts).
