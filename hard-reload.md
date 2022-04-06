@@ -6,7 +6,11 @@ The cause is usually Chrome's aggressive "caching", i.e. re-using static assets 
 
 To do so:
 
- 1. Open the Dev Tools (from the `View > Developer` menu, or right-click on any element and `Inspect`, or press <kbd>F12</kbd>).
+ 1. Open the Dev Tools...
+    - from the `View > Developer` menu
+    - or right-click on any element and `Inspect`
+    - or press <kbd>F12</kbd>
+    - or <kbd>Ctrl</kbd>`+`<kbd>Shift</kbd>`+`<kbd>J</kbd> (on Windows) or <kbd>Ctrl</kbd>`+`<kbd>Option</kbd>`+`<kbd>J</kbd> (on Mac)
  2. **Right-click** on the refresh button.
  3. Select "Empty cache and hard reload".
 
