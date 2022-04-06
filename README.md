@@ -1,9 +1,15 @@
 ### Full-Stack Application Development for Beginners
 
-Works in progress, and not in order.
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-1">
+      <script async src="https://cse.google.com/cse.js?cx=84981202d2395b390"></script>
+      <div class="gcse-search"></div>
+    </div>
+  </div>
+</div>
 
-<script async src="https://cse.google.com/cse.js?cx=84981202d2395b390"></script>
-<div class="gcse-search"></div>
+Works in progress, and not in order.
  
  1. [Planning your idea](https://chapters.firstdraft.com/chapters/783)
  2. [Diagramming your domain model](https://chapters.firstdraft.com/chapters/782)
