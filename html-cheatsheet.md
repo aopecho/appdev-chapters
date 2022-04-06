@@ -104,9 +104,9 @@ This element contains all other elements and content that a user can see or inte
 A block-level element always starts on a new line and takes up the full width of its parent element.
 
 Common block-level elements include:
-- `<div>`
-- `<h1>` through `<h6>`
-- `<p>`
+- `<div></div>`
+- `<h1><h1>` through `<h6></h6>`
+- `<p></p>`
 
 ### Inline
 
@@ -114,7 +114,7 @@ An inline elment does not start on a new line and only takes up as much width as
 
 Common inline elements include:
 - `<img>`
-- `<a>`
-- `<span>`
+- `<a></a>`
+- `<span></span>`
 
 <hr>
