@@ -1,8 +1,8 @@
-# Forcing Chrome to "Hard" Reload
+# Forcing Chrome to "Hard" Refresh
 
 Sometimes, when we update a CSS stylesheet, our page appears not to change. This is especially frequent when we're working on static HTML files in the `public/` folder.
 
-The cause is usually Chrome's aggressive "caching", or saving, CSS files that it has already downloaded. If we refresh an HTML page that we've updated, Chrome won't necessarily also refresh all `<link>`ed CSS files unless we ask it to.
+The cause is usually Chrome's aggressive "caching", i.e. re-using static assets that it has already downloaded; for performance reasons. If we refresh an HTML page that we've updated, Chrome won't necessarily also refresh all `<link>`ed CSS files — unless we ask it to by "hard" refreshing.
 
 To do so:
 
