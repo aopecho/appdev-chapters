@@ -246,18 +246,125 @@ There's also a similar `rowspan` attribute to merge vertically, although we use 
 
 ### div — a generic block level container
 
+The `div` tag defines a division or a section in an HTML document. Similar to a `p` tag, but it should be used to contain or group together other tags, not just text.
+
+```html
+Regular text
+<div>
+  Block level <a href="https://google.com">element</a>
+</div>
+```
+
+Regular text
+<div>
+  Block level <a href="https://google.com">element</a>
+</div>
+
 ### span — a generic in-line container
 
+The `span` tag is used to group inline-elements in a document. It provides no visual change by itself. It's most commonly used to style or select a specific part of text.
+
+```html
+My mother has <span>brown</span> eyes
+```
+
+My mother has <span>brown</span> eyes
 ## Housekeeping
 
 ### html
 
+The `html` tag tells the browser that this is an HTML document. It is used as a container for all of the HTML of an entire document or page. (except for the `<!DOCTYPE>` declaration).
+
+```html
+<!DOCTYPE html>
+<html>
+  
+</html>
+```
 ### head
 
+The `head` tag  contains information about an HTML document that is used by browsers and web crawlers but is not displayed to website visitors. The head is where you put information like the page title, the character selection, or link to your site's Favicon.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  </head>
+</html>
+```
 ### body
+
+The `body` tag contains the entire content of a webpage. It must be the second element inside of the parent html element, following only the head element. Any text, links images, list, or tables go inside the body.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    This is a whole HTML page.
+  </body>
+</html>
+```
+
+This is a whole HTML page.
 
 #### title
 
+The `title` tag is required and used to assign a title to an HTML document. These titles are not displayed in the browser window, but they are used as the page name by search engines and displayed by browsers in the title bar, on the page tab, and as the page name of bookmarked webpages.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Reference</title>
+  </head>
+  <body>
+    This is a whole HTML page.
+  </body>
+</html>
+```
+
+This is a whole HTML page.
+
+![](/assets/browser-title.jpg)
+
 #### meta
 
+The `meta` tag is  used to add machine-readable information to an HTML page. These tags always go in the `head` tag and are typically used to specify information about the content of the page. For example, page description, keywords, author of the document, or type of characters used.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Reference</title>
+    <meta charset="utf-8">
+    <meta name="author" content="John Doe">
+  </head>
+  <body>
+    This is a whole HTML page.
+  </body>
+</html>
+```
+
+This is a whole HTML page.
 #### link
+
+The `link` tag defines a link between a document and an external resource. This element is most commonly used to define the relationship between a document and one or more external CSS stylesheets.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Reference</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="theme.css">
+  </head>
+  <body>
+    This is a whole HTML page.
+  </body>
+</html>
+```
+
+This is a whole HTML page.
