@@ -13,10 +13,33 @@ h1 {
 }
 ```
 
-<small>`tagname` is a not a real HTML tag, but a placeholder for any HTML tag.</small>
+The **selector** identifies which elements you want to style. 
 
-### Attributes
+A **declaration block** is made up of one or more **declarations**, which are separated by semicolons (`;`).
 
+A declaration is comprised of a **property** and a **value** separated by a colon (`:`).
+
+## Selectors
+Selectors are how we specify which HTML elements we want our style rule to apply to.
+There are bunch of different selectors; for now we're going to dramatically simplify and only think about two: tag-type and class-level.
+
+## Tag-type
+
+Tag-type selectors target _all_ elements of a particular type, e.g. all `h1` or all `ul`:
+
+```css
+h1 {
+  color: maroon;
+  font-weight: 700;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: none;
+}
+```
+
+## Class-level
 An attribute specifies additional information about the element. One or more attributes can be added inside the opening tag after the tag name. Attributes are usually structured as name/value pairs in the format `name="value"`.
 
 For example:
