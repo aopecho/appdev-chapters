@@ -283,7 +283,7 @@ The `html` tag tells the browser that this is an HTML document. It is used as a 
 ```
 ### head
 
-The `head` tag  contains information about an HTML document that is used by browsers and web crawlers but is not displayed to website visitors. The head is where you put information like the page title, the character selection, or link to your site's Favicon.
+The `head` tag  contains information about an HTML document that is used by browsers and web crawlers but is not displayed to website visitors. The head is where you put information like the page title, the character selection, or link to your site's [favicon](https://www.w3schools.com/html/html_favicon.asp){:target="_blank"}.
 
 ```html
 <!DOCTYPE html>
