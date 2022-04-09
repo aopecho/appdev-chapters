@@ -221,6 +221,19 @@ This helps tremendously when dealing with a data structure that we didn't create
 
 The keys in a `Hash` can be any class — `String`, `Integer`, whatever — but we almost always use `Symbol`s as keys to our `Hash`es. (I like using symbols as the keys simply because since the values are usually strings, syntax highlighting makes keys stand out from values in our code.)
 
+## key
+
+The `.key` method is sort of the inverse of `.fetch`: given an object, `.key` searches through each value in the hash and returns the key where it resides or `nil` if it doesn't exist in the hash. 
+
+```ruby
+h = { "a" => 100, "b" => 200, "c" => 300, "d" => 400 }
+h.key(100)   #=> "a"
+h.key(200)   #=> "b"
+h.key(300)   #=> "c"
+h.key(400)   #=> "d"
+h.key(500)   #=> nil
+```
+
 ## The bottom line
 
 `Array`s are very useful for storing a list of things that are all basically the same, and for lists that are of unknown length, and so it's nice for Ruby to automatically number them for you.
