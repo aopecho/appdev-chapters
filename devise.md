@@ -57,12 +57,11 @@ If you already have rows in the users table and don't want to drop your database
 The big benefits that we now get for free from Devise are:
 
  - RCAVs that handle sign up, sign in, and sign out -- all done, for free!
- - **the `current_user` helper method, available within all views and controllers, that will retrieve the row from the Users table for whoever is currently signed in**
- - the `before_action :authenticate_user!` filter that we can use in our controllers to ensure someone is signed in before accessing any actions within that controller
+    - Visit /rails/info and search for "user" to see the routes that were automatically written. It's up to use to link to these routes in our UI wherever we think it appropriate; e.g. in the navbar.
+ - **The `current_user` helper method, available within all views and controllers, that will retrieve the row from the Users table for whoever is currently signed in.**
+ - The `before_action :authenticate_user!` filter that we can use in our controllers to ensure someone is signed in before accessing any actions within that controller.
 
 There are lots more (password reset emails, etc), but these are the first ones that we care about.
-
-The application layout file that is written by `rails g starter:style default` includes examples in the nav bar of what the sign-up/in/out links look like. You'll have to customize them a bit based on what you called your secure model. **Notice the `data-method="delete"` attribute on the sign-out link -- that is important, and you need to include it.** (But be careful not to include it on regular links if you, e.g., copy-paste this one.)
 
 ## Customizing Devise Views
 
