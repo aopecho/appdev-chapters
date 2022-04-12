@@ -68,6 +68,7 @@ Works in progress, and not in order.
 
 ---
 
+ 1. [Authentication with Devise](https://chapters.firstdraft.com/chapters/880)
  1. [Command-line Git basics](https://chapters.firstdraft.com/chapters/859)
  2. [A few Git aliases](https://chapters.firstdraft.com/chapters/857)
  3. [Continuous Delivery](https://chapters.firstdraft.com/chapters/858)
