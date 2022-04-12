@@ -1,5 +1,7 @@
 ### Full-Stack Application Development for Beginners
 
+Search within all chapters:
+
 <div class="container">
   <div class="row">
     <div class="col-md-10 offset-md-1">
