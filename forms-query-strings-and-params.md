@@ -18,8 +18,6 @@ A form must have an `action` attribute. The value of this attribute is the route
 </form>
 ```
 
-<!-- A form must also have a `method` attribute -->
-
 Forms generally capture user input using `<input>`[^Input] elements. Each `<input>` must be a child element of the form.
 
 ```html
