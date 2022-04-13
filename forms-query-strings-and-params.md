@@ -2,14 +2,14 @@
 
 We use forms to collect information from users. The information the user enters is sent to our app for processing.
 
-## Bare bones HTML form
+## A bare bones HTML form
 
 ```html
 <form>
 </form>
 ```
 
-### form attributes
+### Required elements and attributes
 
 A form must have an `action` attribute. The value of this attribute is the route/URL that the user should visit when the form is submitted.
 
@@ -18,20 +18,22 @@ A form must have an `action` attribute. The value of this attribute is the route
 </form>
 ```
 
-A form must also have a `method` attribute
+<!-- A form must also have a `method` attribute -->
 
-Forms generally capture user input using `<input>` elements. Each `<input>` must be a child element of the form.
+Forms generally capture user input using `<input>`[^Input] elements. Each `<input>` must be a child element of the form.
 
 ```html
-<form>
+<form action="/process_form">
   <input>
 </form>
 ```
 
+[^Input]: `<input>` elements are one of [the few HTML elements](https://chapters.firstdraft.com/chapters/879#exceptions) that don't require a closing tag.
+
 A `<button>` element is required to submit the form.
 
 ```html
-<form>
+<form action="/process_form">
   <input>
   <button>Submit</button>
 </form>
@@ -42,11 +44,11 @@ A `<button>` element is required to submit the form.
 
 At a minimun, each `<input>` needs a `name` attribute and a `value` attribute.
 
-The `name` can be anything, but it should be unique within the form.
+The value for the `name` attribute can be anything, but it should be unique within the form.
 
 ```html
 <!-- GOOD -->
-<form>
+<form action="/process_form">
   <input name="email">
   <input name="password">
   <button>Submit</button>
@@ -55,19 +57,19 @@ The `name` can be anything, but it should be unique within the form.
 
 ```html
 <!-- BAD -->
-<form>
+<form action="/process_form">
   <input name="email">
   <input name="email">
   <button>Submit</button>
 </form>
 ```
 
-The `value` can be determined in different ways, but is most commonly it is whatever the user has been typed into the field.
+By default the `value` attribute is empty, but it will automatically receive the text that the user typed into the field as the value.
 
-By default the `value` attribute is empty, but you can set an initial value— which can be handle for edit forms.
+You can also set an initial value for the `value` attribute. This is especially useful for "edit" forms.
 
 ```html
-<form>
+<form action="/process_form">
   <input name="email" value="test@example.com">
   <button>Submit</button>
 </form>
@@ -78,19 +80,19 @@ which renders in the browser like this:
   <input name="email" value="test@example.com">
 </div>
 
-## Form submission
+## Submitting a form
 
-How does our app know what the user typed in the form?
+Forms are used to collect information from our users and that information is sent to our app for processing. But how does our app _know_ what the user typed in the form?
 
 ### Query string
 
-The query string is an optional part of a URL that begins with a `?`. The query string contains information a user has entered.
+The query string is an optional part of a URL that begins with a `?`. Since it's optional, you can add a query string to the end of any URL:
 
 <span style="font-size: 1.2rem;font-family: monospace;">http://www.example.com/<span style="color: red; text-decoration: underline;">?fruit=apple&color=green</span></span>
 
-A query string functions similar to a Ruby Hash— it's a list of key-value pairs. In the example, `fruit` and `color` are keys, and `apple` and `green` are values. 
+A query string functions similar to a Ruby Hash— it's a list of key-value pairs. In the example, `fruit` and `color` are keys, while `apple` and `green` are the values. 
 
-Forms _automatcially_ create a query string when they are submitted. The keys in the resulting query string come from the `name` attribute of the `<input>` and the `value` is whatever the user typed into that field. The URL before the query string comes from the `action` attribute of the `<form>`
+Forms are useful because they _automatcially_ create a query string when they are submitted. The keys in the resulting query string come from the `name` attribute of the `<input>` while the `value` comes from whatever the user typed into that field. The URL segment before the query string comes from the `action` attribute of the `<form>`.
 
 ```html
 <form action="http://www.example.com/">
@@ -103,73 +105,72 @@ Forms _automatcially_ create a query string when they are submitted. The keys in
 <span style="font-size: 1.2rem;font-family: monospace;">http://www.example.com/<span style="color: red; text-decoration: underline;">?fruit=apple&color=green</span></span>
 
 
-
-
-When a form is submitted, the name-value pairs from all the fields inside the `<form>` element are included in an HTTP. The request is made to a URL defined in the form’s `action` attribute, and the type of request (`GET` or `POST`) is defined in the form’s `method` attribute. This means that all the user-provided data is sent to the server all at once when the form is submitted, and the server can do whatever it wants with that data.
+So when a form is submitted, the user is sent to the URL that was specified in the `action` attribute of the form. The name-value pairs from each input field inside the `<form>` element are added as a query string onto the URL from the `action`. Try it out!
 
 ## Demo
 
+<div class="iframe-container" style="overflow: hidden;padding-top: 56.25%;position: relative;"><iframe loading="lazy" style="border: 0;height: 100%;left: 0;position: absolute;top: 0;width: 100%;" src="https://jelani.dev/form-demo/"></iframe></div>
+
+## params
+
+In Rails, `params` is a special Hash that is defined every time someone visits a URL. It will first check to see if a query string is present and if it finds one it adds any name/value pairs into a Ruby Hash so we can more easily manipulate user input.
+
+Assuming our application has a route defined for `/add_fruit` and a user submitted a form that resulted in visit to this URL:
+
+<span style="font-size: 1.2rem;font-family: monospace;">/add_fruit<span style="color: red;">?fruit=apple&color=green</span></span>
+
+Rails reads the query string and adds each name/value pair into the `params` Hash:
+
+<span style="font-size: 1.2rem;font-family: monospace;">{<span style="color: red; ">"fruit" <span style="color:black;">=></span> "apple"<span style="color:black;">,</span> "color" <span style="color:black;">=></span> "green"</span>}</span>
+
+Try it out!
+
+### params Demo
+
+<div class="iframe-container" style="overflow: hidden;padding-top: 56.25%;position: relative;"><iframe loading="lazy" style="border: 0;height: 100%;left: 0;position: absolute;top: 0;width: 100%;" src="https://jelani.dev/form-demo/params"></iframe></div>
+
+## Valid forms
+
+While the previous forms were all _functional_ in that they created a query string with all of the information that a user filled out, they were technically invalid.
+
+In order for a form to be considered valid by HTML standards, it must have a `<label>` element that is connected to each `<input>` element that the user interacts with.
+
+First, add the `<label>` elements for each `<input>`:
+
 ```html
-<form action="/process" method="get">
+<form action="/process_url">
+  <label>Fruit</label>
   <input name="fruit">
+  <label>Color</label>
+  <input name="color">
   <button>Submit</button>
 </form>
 ```
 
-<form action="/process" method="get" id="demo">
-  <input name="fruit">
+Then, in order to connect one `<label>` to one `<input>`, both the `<label>` and `<input>` need an attribute with the **same** unique value.
+
+The `<label>` element needs a `for=""` attribute while the `<input>` element needs an `id=""` attribute.
+
+The value of these attributes can be anything, but it must be unique.
+
+A complete valid form looks like this:
+
+```html
+<form action="/process_url">
+  <label for="zebra">Fruit</label>
+  <input id="zebra" name="fruit">
+  <label for="giraffe">Color</label>
+  <input id="giraffe" name="color">
   <button>Submit</button>
 </form>
+```
 
-<div id="result"></div>
+### Why use valid forms?
 
-<script>
-  var form = document.getElementById('demo')
-  var input = document.getElementsByTagName('input')[0]
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    var action = this.attributes[0].value;
-    var name = input.name;
-    var value = input.value;
-    var query_string = `?${name}=${value}`;
-    var full_url = `${action}${query_string}`;
-    var rails_params = `{ "${name}" => "${value}" }`;
-    var content = `This form submitted to: <code>${full_url}</code><br>The query string is <code>${query_string}</code>.<br>The <code>params</code> Hash looks like this <code>${rails_params}</code>.`
-    console.log(full_url);
-    console.log(rails_params);
-    updateResult(content);
-  });
+There are several reasons we need to write valid forms in our HTML:
+- The tests for `rails grade` will fail, since they won't know how to fill out your forms.
+- For users visiting our app from a phone, it's hard to tap on checkboxes. In valids forms, if you click on a label, it checks/unchecks the connected checkbox.
+- Screen readers need the `for=""` and `id=""` attributes in order to understand how to fill out the form.
+- Search engines penalize you if the forms on your site are invalid.
 
-  function updateResult(content) {
-    var result = document.getElementById("result");
-    result.innerHTML = content;
-  }
-</script>
----
-`<input>` are one of the few HTML elements that don't require a closing tag.
-
-
-## How forms work
-
-## params
-## Valid forms
-
-## Visiting a URL
-An HTML form is used to collect user input. The user input is most often sent to a server for processing.
-
-When you load a page, you are making an HTTP request (a `GET` request, usually). This request is sent by your browser to the server, and the server responds with (usually) the web page you are looking for. This interaction is one of the most fundamental concepts of the internet. And it is how HTML forms are designed to work.
-
-Each input element inside a `<form>` element has a `name` attribute, and also a `value`. The `value` is determined in different ways. For text-based inputs, the value is whatever has been typed into the field. The user can adjust the `value`, but not the `name`. This creates a set of name-value pairs in which the values are determined by user input.
-
-When a form is submitted, the name-value pairs from all the fields inside the `<form>` element are included in an HTTP. The request is made to a URL defined in the form’s `action` attribute, and the type of request (`GET` or `POST`) is defined in the form’s `method` attribute. This means that all the user-provided data is sent to the server all at once when the form is submitted, and the server can do whatever it wants with that data.
-
-When the server receives the form submission, it is like any other HTTP request. It does whatever it needs to do with the included data and issues a response back to the browser. Remember how a page load is a response? Same thing here. In a typical form submission, the response is a new page which the browser loads.
-
-The vast majority of online forms work this way.
-
-## Why We Use Forms
-to get input from users
-## How forms 
-
-
-
+<br>
