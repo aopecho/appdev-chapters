@@ -1,6 +1,6 @@
 # Forms, Query Strings, and Params
 
-We use forms to collect information from users. The information the user enters is sent to our app for processing.
+We use forms to collect information from users. Only by submitting this information to our application, and processing it, does our application start to become interesting.
 
 ## A bare bones HTML form
 
@@ -38,7 +38,7 @@ A `<button>` element is required to submit the form.
 ```
 
 
-### input attributes
+### <input> attributes
 
 At a minimum, each `<input>` needs a `name` attribute and a `value` attribute.
 
@@ -111,7 +111,7 @@ So when a form is submitted, the user is sent to the URL that was specified in t
 
 ## params
 
-In Rails, `params` is a special Hash that is defined every time someone visits a URL. It will first check to see if a query string is present and if it finds one it adds any name/value pairs into a Ruby Hash so we can more easily manipulate user input.
+In Rails, `params` is a special Hash that is defined every time someone visits a URL. Rails will first check to see if a query string is present and if it finds one, it adds any name/value pairs into a Ruby Hash. With the user input in a Hash we can more easily access and manipulate it in our application.
 
 Assuming our application has a route defined for `/add_fruit` and a user submitted a form that resulted in visit to this URL:
 
@@ -149,7 +149,7 @@ Then, in order to connect one `<label>` to one `<input>`, both the `<label>` and
 
 The `<label>` element needs a `for=""` attribute while the `<input>` element needs an `id=""` attribute.
 
-The value of these attributes can be anything, but it must be unique.
+The value of these attributes can be anything, but remember it must be unique.
 
 A complete valid form looks like this:
 
