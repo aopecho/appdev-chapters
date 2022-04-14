@@ -50,8 +50,8 @@ A few potential items to consider including:
 1. What behavior are you expecting?
 1. What behavior is happening instead?
 2. If there is one, the detailed error message. Remember that [your skill as a developer](https://chapters.firstdraft.com/chapters/754#seriously-please-read-the-error-message){:target="blank"} is measured by the number of error messages that you've experienced and learned to resolve.
-  - What is the headline error message? e.g. "undefined method 'capitalize' for 3:Integer"
-  - What file did occur in?
+  - What is the headline error message? e.g. "undefined method 'capitalize' for 3:Integer". Note that I didn't say just "undefined method" or "undefined method 'capitalize'". Include the _whole_ error message — the last part is usually the most helpful.
+  - What file did the error occur in?
   - On what line number?
   - Snippet of the code that is highlighted in the error message.
  1. If it's a Rails project, the server log for the request: what URL were you trying to access, which controller action processed it, what were the `params`? It is helpful to [Clear your terminal](https://chapters.firstdraft.com/chapters/834#clear-terminal){:target="_blank"} before reproducing the issue so that you have clean server log output to copy-paste.
