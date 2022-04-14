@@ -38,6 +38,7 @@ Works in progress, and not in order.
  23. [Each](https://chapters.firstdraft.com/chapters/765)
  24. [Hash](https://chapters.firstdraft.com/chapters/767)
  25. [Our own classes](https://chapters.firstdraft.com/chapters/769)
+ 25. [Forms, Query Strings, and Params](https://chapters.firstdraft.com/chapters/881)
  26. [Handling exceptions with `begin`/`rescue`/`end`](https://chapters.firstdraft.com/chapters/833)
  27. [Storing credentials securely on Gitpod](https://chapters.firstdraft.com/chapters/792)
  28. [Meteorologist (Intro to APIs)](https://chapters.firstdraft.com/chapters/847)
