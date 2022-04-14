@@ -27,7 +27,7 @@ To make easier for everyone to find relevant answers, when you are _asking_ ques
 
 ## Write a title that summarizes the specific problem
 
-- Pretend you've bumped into an instructor in the hallway and have to **summarize your entire question in one sentence**: what details can you include that will help someone identify and solve your problem? Include unusual circumstances that make your question different from similar questions that have already been posted.
+- Pretend you've bumped into an instructor in the hallway and have to **summarize your entire question in one sentence**: what details can you include that will help someone identify and solve your problem?
 - If you're having trouble summarizing the problem, **write the title last** - sometimes writing the rest of the question first can make it easier to describe the problem.
 
 Examples:
@@ -39,32 +39,36 @@ Examples:
  - **Bad:** if else problems
  - **Good:** Why does `x` evaluate to `true` when `x = 0`?
 
-## The Question Checklist
+## Context is king
+
+In the body of your question, give us _context_, not just code (and _definitely_ not just a link to a workspace snapshot).
+
+A few potential items to consider including:
 
 1. What project are you working on?
-1. What action are you taking? e.g. "visiting /photos/4"
+1. What action are you taking? e.g. "When trying to visit the URL /photos/4..." or "When I submit the form on my photos index page..."
 1. What behavior are you expecting?
 1. What behavior is happening instead?
-   - a screenshot is worth a thousand words
-   - an [animated gif](https://www.cockos.com/licecap/) is worth a thousand screenshots
-   - a detailed error message is worth a thousand gifs
-     - Exception
-     - Filename
-     - Line number
-     - Snippet of relevant code
-     - Copy-paste the error message rather than screenshot it so that we can Google it easily
-     - If you are Googling error messages yourself, try to cut out parts of it that might be unique to your project (e.g. the folder name). Keep it as short as possible while keeping it relevant for Google.
-   - the server log for the request: what URL were you trying to access, which controller action processed it, what were the `params`?
- 1. Make the subject line of the question descriptive, not just the name of the project, so that other students who are browsing can easily identify it.
+2. If there is one, the detailed error message. Remember that [your skill as a developer](https://chapters.firstdraft.com/chapters/754#seriously-please-read-the-error-message){:target="blank"} is measured by the number of error messages that you've experienced and learned to resolve.
+  - What is the headline error message? e.g. "undefined method 'capitalize' for 3:Integer"
+  - What file did occur in?
+  - On what line number?
+  - Snippet of the code that is highlighted in the error message.
+ 1. If it's a Rails project, the server log for the request: what URL were you trying to access, which controller action processed it, what were the `params`? It is helpful to [Clear your terminal](https://chapters.firstdraft.com/chapters/834#clear-terminal){:target="_blank"} before reproducing the issue so that you have clean server log output to copy-paste.
+ 2. Screenshots are sometimes helpful to show things like CSS behavior, but please don't screenshot your code or error message.
+    - Copy-paste your code into the question. Use the code block formatting tool, or [a fenced code block in Markdown](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks){:target="_blank"}, so that your code displays correctly.
+    - Type out the error message yourself — it'll force you to read it, which too often doesn't happen.
+  1. Unusual circumstances that make your question different from similar questions that have already been posted.
 
-
-
-1. It helps you think through the problem thoroughly, which often is enough to figure it out on your own. Almost all programming bugs are a mismatch between what you _think_ you're asking the computer do and what you're _actually_ asking the computer to do.
-2. It gives us enough data upfront to make an educated guess about the problem and avoids a potentially time-consuming back-and-forth to gather all the relevant info.
 
 ## Bug bounty
 
-## Snapshot
+## Snapshots
 
 ## Markdown
 
+## Rubber ducking
+
+
+3. It helps you think through the problem thoroughly, which often is enough to figure it out on your own. Almost all programming bugs are a mismatch between what you _think_ you're asking the computer do and what you're _actually_ asking the computer to do.
+4. It gives us enough data upfront to make an educated guess about the problem and avoids a potentially time-consuming back-and-forth to gather all the relevant info.
