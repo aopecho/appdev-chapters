@@ -40,7 +40,7 @@ A `<button>` element is required to submit the form.
 
 ### input attributes
 
-At a minimun, each `<input>` needs a `name` attribute and a `value` attribute.
+At a minimum, each `<input>` needs a `name` attribute and a `value` attribute.
 
 The value for the `name` attribute can be anything, but it should be unique within the form.
 
