@@ -38,7 +38,7 @@ A `<button>` element is required to submit the form.
 ```
 
 
-### <input> attributes
+### `<input>` attributes
 
 At a minimum, each `<input>` needs a `name` attribute and a `value` attribute.
 
