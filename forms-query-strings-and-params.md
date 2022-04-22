@@ -119,7 +119,7 @@ Assuming our application has a route defined for `/add_fruit` and a user submitt
 
 Rails reads the query string and adds each name/value pair into the `params` Hash:
 
-<span style="font-size: 1.2rem;font-family: monospace;">{<span style="color: red; ">"fruit" <span style="color:black;">=></span> "apple"<span style="color:black;">,</span> "color" <span style="color:black;">=></span> "green"</span>}</span>
+<span style="font-size: 1.2rem;font-family: monospace;">{<span style="color: red; ">&quot;fruit&quot; <span style="color:black;">=></span> &quot;apple&quot;<span style="color:black;">,</span> &quot;color&quot; <span style="color:black;">=></span> &quot;green&quot;</span>}</span>
 
 Try it out!
 
