@@ -54,8 +54,8 @@ What if I wanted you to define a method called `border` such that I could send i
 
 ```ruby
 border do
-  p "howdy!"
-  p "My name is Raghu"
+  puts "howdy!"
+  puts "My name is Raghu"
 end
 ```
 
