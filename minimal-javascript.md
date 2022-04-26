@@ -18,7 +18,7 @@ Thankfully, also like CSS, JavaScript has made tremendous strides in the last 5-
 
 ## The very basics
 
-For the very basics of JavaScript, I recommend this Scrimba course: [Introduction to JavaScript](https://scrimba.com/learn/introtojavascript){:target="_blank"}. You should be able to watch it on 1.5x or 2x speed. Go ahead, I'll wait.
+For the very basics of JavaScript, I recommend this Scrimba course: [Introduction to JavaScript](https://scrimba.com/learn/introtojavascript){:target="_blank"}. You should be able to watch it on 1.5x or 2x speed. Or, if you want to go even deeper first, then [Scrimba's JavaScript Bootcamp](https://scrimba.com/learn/javascript){:target="_blank"} is good and will cover concepts that we'll need in the future when we get to React. Go ahead, I'll wait.
 
 ---
 
@@ -26,7 +26,7 @@ For the very basics of JavaScript, I recommend this Scrimba course: [Introductio
 
 ---
 
-Welcome back! What did you think?
+Welcome back! What did you think of your first encounter with JavaScript?
 
 ### This ain't your first rodeo
 
@@ -278,11 +278,25 @@ Okay, with that review of blocks under our belt, let's now, finally, take a look
 
 ### Ruby -> JavaScript translations
 
-First, go through the following Ruby statements and the roughly equivalent translation[^rosetta_stone] into JavaScript and see if they all make sense to you. If not, experiment with them. To experiment, create an HTML file on your computer ([VSCode](https://code.visualstudio.com/){:target="_blank} is a good choice for an editor), write your code within a `<script>` tag, open the file in Chrome, and look at the output in [the JavaScript console](https://developer.chrome.com/docs/devtools/console/javascript/){:target="_blank}.
+First, go through the following Ruby statements and the roughly equivalent translation[^rosetta_stone] into JavaScript and see if they all make sense to you. If not, experiment with them. To experiment, create an HTML file, write your code within a `<script>` tag, open the file in Chrome, and look at the output in [the JavaScript console](https://developer.chrome.com/docs/devtools/console/javascript/){:target="_blank}.
+
+If you don't have a [code editor](https://code.visualstudio.com/download) installed on your computer, you can use the same base-ruby Gitpod workspace that you were using to experiment with Ruby above. Follow these steps:
+
+ - Create a Ruby file called `my_app.rb`.
+ - Inside this Ruby file, add one line:
+
+    ```ruby
+    require 'sinatra'
+    ```
+ - Run your program with `ruby my_app.rb`.
+ - Voilà! We've created a web app using [the framework Sinatra](https://www.devdungeon.com/content/ruby-sinatra-tutorial). Sinatra is a very lightweight framework, compared to Rails. It doesn't include ActiveRecord and a million other things that Rails does, but for simple request/responses, it's very elegant.
+ - One thing that Sinatra shares with Rails is the convention that you can put static assets in `public/` and they will be automatically served. Create a folder called `public/` and a file within called `hello.html`.
+ - Visit `/hello.html` in your applicatin preview. Click on the "Remote Explorer" icon in the left sidebar to open your preview, if you don't have it open already.
+ - Now we can write our JavaScript within a `<script>` element and see the output in our Chrome Dev Tools Console.
 
 [^rosetta_stone]: I find that a ["rosetta stone"](https://blog.britishmuseum.org/everything-you-ever-wanted-to-know-about-the-rosetta-stone/){:target="_blank} approach is very helpful when learning a new programming language.
 
-Ask questions on Piazza about anything that's fuzzy.
+Let's get started translating our Ruby knowledge into JavaScript.
 
 #### Semicolon rule of thumb
 
@@ -308,6 +322,7 @@ Ruby:
 
 ```ruby
 name = "Raghu"
+
 p "howdy, #{name}!"
 ```
 
@@ -315,6 +330,7 @@ JavaScript:
 
 ```js
 let name = "Raghu";
+
 console.log(`howdy ${name}!`);
 ```
 
