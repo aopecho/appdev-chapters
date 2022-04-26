@@ -50,32 +50,98 @@ But first, it will be helpful to make sure you understand the following explorat
 
 ### Defining methods that accept blocks
 
-What if I wanted you to define a method called `border` such that I could send it some code within a block, and it would first print a row of dashes, then run the code, then print another row of dashes. So, if I called the method like this:
+What if I wanted you to define a method called `benchmark` such that:
+
+- I could send it some arbitrary code within a block.
+- It would print some explanatory text and dashes.
+- Then it would run the code I sent.
+- Then it would print the amount of time that it took to execute the code I sent.
+ 
+So, if I called the method like this:
 
 ```ruby
-border do
+benchmark do
   puts "howdy!"
-  puts "My name is Raghu"
 end
 ```
 
-When run, the output of the program should look like this:
+When run, the output of the program should look something like this:
 
 ```
-----------------------------------------
+==================================================
+Starting benchmark.
+--------------------------------------------------
 howdy!
-My name is Raghu
-----------------------------------------
+--------------------------------------------------
+It took 4.6191e-05 seconds to run your code.
+==================================================
 ```
 
-Could you define such a method? Go ahead, give it a try. I'll wait. (It might be helpful to review [the `about_blocks.rb` Ruby Koan](https://github.com/appdev-projects/ruby-koans/blob/9a498bdc3f78cb1b13f7ba97235c5f6c2377f60d/about_blocks.rb){:target="_blank"}.)
+Here's a more realistic example:
 
 ```ruby
-# Define border here.
+sample_data = Array.new(10_000_000) { rand(100) }
 
-border do
+# Benchmarking .each
+benchmark do
+  sample_data.each do |datum|
+    datum * 2
+  end
+end
+
+# Benchmarking while
+benchmark do
+  counter = 0
+
+  while counter < sample_data.length
+    sample_data[counter] * 2
+    
+    counter += 1
+  end
+end
+
+# Benchmarking for
+benchmark do
+  for datum in sample_data do
+    datum * 2 
+  end
+end
+```
+
+If we define the `benchmark` method properly, the output should look something like[^each_speed]:
+
+[^each_speed]: As we can see, the three looping constructs perform quite similarly. Many students coming to Ruby from other languages ask whether `.each` is slower than `while`; the answer is no.
+
+```
+==================================================
+Starting benchmark.
+--------------------------------------------------
+--------------------------------------------------
+It took 0.344827695 seconds to run your code.
+==================================================
+==================================================
+Starting benchmark.
+--------------------------------------------------
+--------------------------------------------------
+It took 0.342456005 seconds to run your code.
+==================================================
+==================================================
+Starting benchmark.
+--------------------------------------------------
+--------------------------------------------------
+It took 0.340229314 seconds to run your code.
+==================================================
+```
+
+Can you define the `benchmark` method? Go ahead, give it a try. I'll wait.
+
+(It might be helpful to review [the `about_blocks.rb` Ruby Koan](https://github.com/appdev-projects/ruby-koans/blob/9a498bdc3f78cb1b13f7ba97235c5f6c2377f60d/about_blocks.rb){:target="_blank"}.)
+
+```ruby
+# Define the benchmark method here.
+
+benchmark do
   puts "howdy!"
-  puts "My name is Raghu"
 end
 ```
 
@@ -90,30 +156,48 @@ What we need to do here is define a method that is capable of receiving not just
 In Ruby, we actually don't have to do anything at all to our method in order to allow it to receive a block; if a block is provided by the user of the method, it will automatically be captured and we (the method authors) can invoke it with `yield`:
 
 ```ruby
-def border
-  puts "-" * 40
+def benchmark
+  puts "=" * 50
+  puts "Starting benchmark."
+  puts "-" * 50
+
+  start_time = Time.now
+  
   yield
-  puts "-" * 40
+
+  end_time = Time.now
+
+  elapsed_time = end_time - start_time
+
+  puts "-" * 50
+  puts "It took #{elapsed_time} seconds to run your code."
+  puts "=" * 50
 end
 
-border do
+benchmark do
   puts "howdy!"
-  puts "My name is Raghu"
 end
 ```
 
 However, we can also define methods that [receive and name blocks explicitly](https://github.com/appdev-projects/ruby-koans/blob/9a498bdc3f78cb1b13f7ba97235c5f6c2377f60d/about_blocks.rb#L85){:target="_blank"} by treating the block like the last argument but prefixing it with an ampersand (`&`):
 
 ```ruby
-def border(&content_instructions)
-  puts "-" * 40
-  content_instructions.call
-  puts "-" * 40
-end
+def benchmark(&code_to_be_benchmarked)
+  puts "=" * 50
+  puts "Starting benchmark."
+  puts "-" * 50
 
-border do
-  puts "howdy!"
-  puts "My name is Raghu"
+  start_time = Time.now
+  
+  code_to_be_benchmarked.call
+
+  end_time = Time.now
+
+  elapsed_time = end_time - start_time
+
+  puts "-" * 50
+  puts "It took #{elapsed_time} seconds to run your code."
+  puts "=" * 50
 end
 ```
 
@@ -123,25 +207,61 @@ The `.call` method is used to actually execute the code that is stored in the bl
 
 Okay, what about if we want the method to accept both a block _and_ arguments?
 
-What if I wanted to improve the methods such that the caller gets to choose the size and character of the the border:
+For example, what if I wanted to provide a descriptive label for each benchmark, to make the output easier to understand?
 
 ```ruby
-border(20, "*") do
-  puts "howdy!"
-  puts "My name is Raghu"
+sample_data = Array.new(10_000_000) { rand(100) }
+
+# Benchmarking .each
+benchmark(".each") do
+  sample_data.each do |datum|
+    datum * 2
+  end
+end
+
+# Benchmarking while
+benchmark("while") do
+  counter = 0
+
+  while counter < sample_data.length
+    sample_data[counter] * 2
+    
+    counter += 1
+  end
+end
+
+# Benchmarking for
+benchmark("for") do
+  for datum in sample_data do
+    datum * 2 
+  end
 end
 ```
 
 And the output should be:
 
 ```
-********************
-howdy!
-My name is Raghu
-********************
+==================================================
+Starting benchmark: '.each'
+--------------------------------------------------
+--------------------------------------------------
+It took 0.339939834 seconds to run '.each'.
+==================================================
+==================================================
+Starting benchmark: 'while'
+--------------------------------------------------
+--------------------------------------------------
+It took 0.346698033 seconds to run 'while'.
+==================================================
+==================================================
+Starting benchmark: 'for'
+--------------------------------------------------
+--------------------------------------------------
+It took 0.380493103 seconds to run 'for'.
+==================================================
 ```
 
-Give it a try.
+Try upgrading the `benchmark` method to allow it to accept a label.
 
 ---
 
@@ -152,74 +272,54 @@ Give it a try.
 In order to allow our method to receive arguments as well, we need to move our block over and make sure it comes last:
 
 ```ruby
-def border(size, top_character, &content_instructions)
-  puts top_character * size
-  content_instructions.call
-  puts top_character * size
+def benchmark(label, &code_to_be_benchmarked)
+  puts "=" * 50
+  puts "Starting benchmark: '#{label}'"
+  puts "-" * 50
+
+  start_time = Time.now
+  
+  code_to_be_benchmarked.call
+
+  end_time = Time.now
+
+  elapsed_time = end_time - start_time
+
+  puts "-" * 50
+  puts "It took #{elapsed_time} seconds to run '#{label}'."
+  puts "=" * 50
 end
 ```
+
+Any other arguments can be passed in first and used as usual!
 
 ### Sending block variables back to the caller
 
-Let's say, for argument's sake, that we're going to upgrade the method with side borders; something like this:
+This is a somewhat contrived example, but let's say for argument's sake that the caller of the `benchmark` method needs to know the time at which the measurement started. For example:
 
 ```ruby
-border(10, "*") do 
-  puts "Hi"
-end
-border(50, "=") do 
-  puts "there"
-end
-border(20, ".") do 
-  puts "world"
+benchmark("howdy") do |started_at|
+  puts "howdy #{started_at}!"
 end
 ```
 
-Which produces this:
+Should produce this:
 
 ```
-**********
-!        !
-Hi
-!        !
-**********
 ==================================================
-:                                                :
-there
-:                                                :
+Starting benchmark: 'howdy'
+--------------------------------------------------
+howdy 2022-04-26 17:58:41 +0000!
+--------------------------------------------------
+It took 3.116e-05 seconds to run 'howdy'.
 ==================================================
-....................
-!                  !
-world
-!                  !
-....................
 ```
 
-The `border` method now adds a row above and below the content with a left and right border, but the character used is random. I would like to prepend and append the same character before and after my content, but I need the method to tell me what it's going to be.
-
-Ok, I know this is a contrived example, but the point is: _What if the user of the method needs some information within their block that only the method can provide?_ That sounds like a job for a block variable!
+A bit contrived, but the point is: _What if the user of the method needs some information within their block that only the method can provide?_ That sounds like a job for a block variable!
 
 Here's what the caller of the method would really like to do — make up a name for a block variable, say `edge`, and then use it within the block:
 
-```ruby
-border(40, "*") do |edge|
-  puts edge + " howdy! ".ljust(38) + edge
-  puts edge + " My name is Raghu ".ljust(38) + edge
-end
-```
-
-To produce:
-
-```
-****************************************
-:                                      :
-: howdy!                               :
-: My name is Raghu                     :
-:                                      :
-****************************************
-```
-
-How do we as the authors of methods send information back through block variables? How would you write the method now? Give it a try.
+How do we as the authors of methods send information back to the caller of the method through block variables? How would you write the method now? Give it a try.
 
 ---
 
@@ -230,27 +330,30 @@ How do we as the authors of methods send information back through block variable
 To send values back through block variables, we provide them as arguments to `call()` when we execute the block:
 
 ```ruby
-def border(size, top_character, &content_instructions)
-  side_character = ["|", ":", "!", "I"].sample
-  
-  puts top_character * size
-  puts side_character + " " * (size - 2) + side_character
-  
-  content_instructions.call(side_character)
+def benchmark(label, &code_to_be_benchmarked)
+  puts "=" * 50
+  puts "Starting benchmark: '#{label}'"
+  puts "-" * 50
 
-  puts side_character + " " * (size - 2) + side_character
-  puts top_character * size
-end
+  start_time = Time.now
+  
+  code_to_be_benchmarked.call(start_time)
 
-border(40, "*") do |edge|
-  puts edge + " howdy! ".ljust(38) + edge
-  puts edge + " My name is Raghu ".ljust(38) + edge
+  end_time = Time.now
+
+  elapsed_time = end_time - start_time
+
+  puts "-" * 50
+  puts "It took #{elapsed_time} seconds to run '#{label}'."
+  puts "=" * 50
 end
 ```
 
-The key bit: `content_instructions.call(side_character)`. This is where we're sending information that then becomes `edge` when the caller of the method makes up a name for the block variable.
+The key bit: `code_to_be_benchmarked.call(start_time)`. This is where we're sending information that then becomes `started_at` or whatever name the caller makes up for the block variable.
 
-And that's about all there is to know about blocks.
+And that's about all there is to know about Ruby blocks[^benchmark_library].
+
+[^benchmark_library]: There is [an official Ruby benchmark library](https://github.com/ruby/benchmark){:target="_blank"}, as well as a whole bunch of third party options (like [Skylight.io for Rails apps](https://www.skylight.io/){:target="_blank"}), in case you ever want to do more in-depth measurements.
 
 ### Callbacks
 
