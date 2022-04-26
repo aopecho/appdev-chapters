@@ -6,7 +6,24 @@ Whether you're asking your classmates and instructors for help with your homewor
 
 ![](/assets/helpmehelpyou.gif)
 
-... help _us_ help _you_.
+... help _us_ help _you_. In other words, a question that consists of:
+
+> Dear professors,
+>
+> I was wondering if you could give me some hints:
+> [link to Gitpod workspace snapshot]
+>
+> Thank you very much!
+>
+> Your adoring student,
+> 
+> - [Some student]
+
+Will not receive a timely response.
+
+Because the goal is not to get the tests to pass; I already know how to get the tests to pass. The goal is for you to _learn how to code_, which mostly means, _learn how to debug independently_.
+
+
 
 Please try to keep the following[^stack_overflow] in mind when you're asking questions:
 
@@ -60,8 +77,23 @@ A few potential items to consider including:
     - Type out the error message yourself — it'll force you to read it, which too often doesn't happen.
   1. Unusual circumstances that make your question different from similar questions that have already been posted.
 
+## Be humble
+
+Rather than "this stupid thing isn't doing the right thing!" "this doesn't make sense!" think "I've been unable so far to instruct Ruby to do what I want it to do".
+
+It is good to question everything, in terms of "why is this working? what would happen if I changed x to y, would it still work?"
+
+"It's not working" => "Something is going wrong with my code somewhere"
+
+
 
 ## Bug bounty
+
+Before throwing up your hands and posting "the tests aren't working", spend a little more time:
+
+ - Compare your app with the target or expected output in the README and make sure they're _exactly_ the same, including spelling, capitalization, and punctuation.
+ - Read the test failure message and try to glean as much helpful information as possible.
+ - Click on the "Examine Test" button to read the actual Ruby of the test. This will allow you to infer what inputs are being tested, and what outputs are expected. Try your code with the exact same inputs, and verify that the wrong output is being generated. Then, debug from there.
 
 ## Snapshots
 
