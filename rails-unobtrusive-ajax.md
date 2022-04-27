@@ -399,7 +399,7 @@ If you can successfully Ajaxify the CRUD operations above, you're in great shape
 
 Even better, we're still conforming to our _mental model_ of RCAV+CRUD, which is straightforward for a small team, or even a single-person team, to iterate quickly with. This is a fantastic approach to use, especially in the early days while finding product/market fit, and satisfies the needs of 95% of the applications I've built for myself or for clients.
 
-On the other hand: for very complicated "single page" applications that really don't fit the RESTful, document/URL-based paradigm (think Google Sheets), this approach using [Rails' "Unobtrusive AJAX"](https://guides.rubyonrails.org/working_with_javascript_in_rails.html){:target="_blank"} may not be the best choice.
+On the other hand: for very complicated "single page" applications that really don't fit the RESTful, document/URL-based paradigm (think Google Sheets or Figma), this approach using [Rails' "Unobtrusive AJAX"](https://guides.rubyonrails.org/working_with_javascript_in_rails.html){:target="_blank"} may not be the best choice.
 
 For cases like that, we will have to consider breaking apart our application into:
 
@@ -412,10 +412,10 @@ The JSON API that we develop will have to be much more robust than the taste we 
 format.json { render json: @movies }
 ```
 
-Typically the back-end and front-end will now be developed by their own specialists, since both will now require much more work and will require markedly different languages/paradigms.
+Typically the back-end and front-end will now be developed by their own specialists, since each will now require  more work and will require markedly different languages/paradigms.
 
 We _could_ build one of these web-clients using `$().ajax` to fetch JSON from our API and `$()` to create and insert elements into the DOM, but it's usually better to use a framework like React, Vue, or Angular.
 
-All in all, going the SPA-route dramatically increases cost and reduces development velocity versus using the Rails Ajax approach outlined above.[^native_clients] But,in some cases, we have no choice. _Only_ go down the SPA road when a simpler approach won't work! Far too many teams choose an SPA framework when their app isn't a single-page at all; if it's a classic, document-based, RESTful CRUD application, you can build for 1/4 the cost if you treat as such. And, as you learned above, you can still make it snappy and interactive using sprinkles of unobtrusive Ajax.
+All in all, going the SPA-route dramatically increases cost and reduces development velocity versus using the Rails Ajax approach outlined above.[^native_clients] But,in some cases, we have no choice. _Only_ go down the SPA road when a simpler approach won't work! Far too many teams choose an SPA framework when their app isn't a single-page at all; if it's a classic, document-based, RESTful CRUD application, you can build for 1/2 the cost if you treat as such. And, as you learned above, you can still make it snappy and interactive using sprinkles of unobtrusive Ajax.
 
 [^native_clients]: But if and when we do decide to go down this road, the nice part is that the same robust JSON API that we develop can feed native iOS and Android clients.
