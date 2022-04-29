@@ -17,7 +17,7 @@ bundle install
 You will then have access to the `Mailgun::Client` class which has an amazing method called `.send_message`, so you can do something like this:
 
 ```ruby
-mg_client.send_message(mg_sending_domain, email_parameters)
+mg_client.send_message(mg_sending_domain, email_info)
 ```
 
 And it will do all the heavy lifting to interact with the Mailgun API and deliver an email!
@@ -33,7 +33,7 @@ mg_sending_domain = "your-sending-domain"
 mg_client = Mailgun::Client.new(mg_api_key)
 
 # Craft your email as a Hash literal with these four keys
-email_parameters =  { 
+email_info =  { 
   :from => "umbrella@appdevproject.com",
   :to => "put-your-own-email-address-here@example.com",  # Put your own email address here if you want to see it in action
   :subject => "Take an umbrella today!",
@@ -41,7 +41,7 @@ email_parameters =  {
 }
 
 # Send your email!
-mg_client.send_message(mg_sending_domain, email_parameters)
+mg_client.send_message(mg_sending_domain, email_info)
 ```
 
 Voilà! Check your email.
@@ -65,7 +65,7 @@ bundle install
 You will then have access to the `Twilio::REST::Client` class which has a bunch of amazing telephony-related methods, including:
 
 ```ruby
-twilio_client.api.account.messages.create(sms_parameters)
+twilio_client.api.account.messages.create(sms_info)
 ```
 
 Which will do all the heavy lifting to interact with the Twilio API and deliver a text message!
@@ -82,14 +82,14 @@ twilio_sending_number = "your-sending-number"
 twilio_client = Twilio::REST::Client.new(twilio_sid, twilio_token)
 
 # Craft your SMS as a Hash literal with three keys
-sms_parameters = {
+sms_info = {
   :from => twilio_sending_number,
   :to => "+19876543210", # Put your own phone number here if you want to see it in action
   :body => "It's going to rain today — take an umbrella!"
 }
 
 # Send your SMS!
-twilio_client.api.account.messages.create(sms_parameters)
+twilio_client.api.account.messages.create(sms_info)
 ```
 
 Voilà! Check your phone.
