@@ -26,8 +26,8 @@ Some setup is required first to get the instance of `Mailgun::Client` ready:
 
 ```ruby
 # Get your credentials from your Mailgun dashboard, or from Canvas if you're using mine
-mg_api_key = ENV.fetch("your-api-key")
-mg_sending_domain = ENV.fetch("your-sending-domain")
+mg_api_key = "your-api-key"
+mg_sending_domain = "your-sending-domain"
 
 # Create an instance of the Mailgun Client and authenticate with your API key
 mg_client = Mailgun::Client.new(mg_api_key)
