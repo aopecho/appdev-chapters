@@ -18,5 +18,5 @@
 * Only one server can run at a time, so `bin/server` will "kill" any other server that's running in another tab. This error can be safely ignored!
 
 **This rails grade test is failing, but my output looks the same as the expected output:**
-* There's always a reason! You can try comparing your output vs the test's expected output in a diff checker (note: is there a preferred diff checker?)
+* There's always a reason! You can try comparing your output vs the test's expected output in a diff checker.
 * Sometimes, this might come down to a subtle difference in characters: as far as your computer is concerned, `'` is different from `‘`, for example!
