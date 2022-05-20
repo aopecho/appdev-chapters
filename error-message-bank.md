@@ -20,3 +20,6 @@
 **This rails grade test is failing, but my output looks the same as the expected output:**
 * There's always a reason! You can try comparing your output vs the test's expected output in a diff checker.
 * Sometimes, this might come down to a subtle difference in characters: as far as your computer is concerned, `'` is different from `‘`, for example!
+
+**`No route matches [GET]` vs. `No route matches [POST]`:**
+* `[GET]` requests are typically for viewing information, without changing it, while `[POST]` requests are used for adding or updating information. Think about what you're trying to do, and review your RCAV flow.
