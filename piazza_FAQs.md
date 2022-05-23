@@ -17,68 +17,6 @@
 
 **How do I get the value I want from a Hash?**
 * When working with `Hashes`, it's important to think of the data as being layered. Visualizing the information can help you figure out the steps you need to take.
-* Let's imagine I'm looking for a pair of shoes. Where are my Nike Blazers with the blue swoosh?! 
-~~~~
-storage_hash = {
-   :closet => { 
-      :organizer_bin => { 
-         :name => "Shoes",
-         "sneakers" => { 
-            "Nike Blazers" => "blue swoosh",
-            "Vans Old Skool" => "pink suede"
-         }
-      }
-   }
-}
-~~~~
-
-* Where could I have stored them? Let's use the `.keys` method to investigate.
-~~~~
-p storage_hash.keys
-[:closet]
-~~~~
-
-* So, the only available storage option is the closet, as it's the only thing in the `Array` of keys that was returned. We can fetch its contents.
-~~~~
-p storage_hash.fetch(:closet)
-{ 
-  :organizer_bin => { 
-     :name => "Shoes",
-     :sneakers => { 
-        "Nike Blazers" => "blue swoosh",
-        "Vans Old Skool" => "pink suede"
-     }
-  }
-}
-~~~~
-
-* This closet is extremely organized—looks like we're once again dealing with a `Hash` that contains another `Hash`! We can save this response in a new variable and then repeat what we did above, figuring out what keys exist:
-~~~~
-closet_contents = storage.hash.fetch(:closet)
-p closet_contents.keys
-[:organizer_bin]
-~~~~
-
-* Alrighty, we know where to look next:
-~~~~
-bin_contents = closet_contents.fetch(:organizer_bin)
-p bin_contents.keys
-[:name, :sneakers]
-~~~~
-
-* Finally, I think I know where my sneakers are. But are the ones I want there?
-~~~~
-sneaker_selection = bin_contents.fetch(:sneakers)
-p sneaker_selection.keys
-["Nike Blazers", "Vans Old Skool"]
-~~~~
-
-* Nice, I found some Nikes! But are they the right ones?
-~~~~
-nike_blazers = sneaker_selection.fetch("Nike Blazers")
-p nike_blazers
-"blue swoosh"
-~~~~
 
 **How do I approach the "count each letter" exercise?** (Jelani's answer to this student's question was really great, so I've copied it here)
 * Assuming the word we want to count the letters for is "apple".
